@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"/>
+    <style>
+        *, html {
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        body {
+            /*background: gray;*/
+        }
+
+        @media (max-width: 1442px) {
+            html {
+                font-size: 192px;
+            }
+        }
+
+        @media (max-width: 1282px) {
+            html {
+                font-size: 170.66666667px;
+            }
+        }
+
+        @media (max-width: 1026px) {
+            html {
+                font-size: 136.53333333px;
+            }
+        }
+
+        @media (max-width: 962px) {
+            html {
+                font-size: 128px;
+            }
+        }
+
+        @media (max-width: 952px) {
+            html {
+                font-size: 126.66666667px;
+            }
+        }
+
+        @media (max-width: 902px) {
+            html {
+                font-size: 120px;
+            }
+        }
+
+        @media (max-width: 802px) {
+            html {
+                font-size: 106.66666667px;
+            }
+        }
+
+        @media (max-width: 775px) {
+            html {
+                font-size: 103.06666667px;
+            }
+        }
+
+        @media (max-width: 770px) {
+            html {
+                font-size: 102.4px;
+            }
+        }
+
+        @media (max-width: 738px) {
+            html {
+                font-size: 98.13333333px;
+            }
+        }
+
+        @media (max-width: 734px) {
+            html {
+                font-size: 97.6px;
+            }
+        }
+
+        @media (max-width: 733px) {
+            html {
+                font-size: 97.46666667px;
+            }
+        }
+
+        @media (max-width: 669px) {
+            html {
+                font-size: 88.93333333px;
+            }
+        }
+
+        @media (max-width: 642px) {
+            html {
+                font-size: 85.33333333px;
+            }
+        }
+
+        @media (max-width: 602px) {
+            html {
+                font-size: 80px;
+            }
+        }
+
+        @media (max-width: 570px) {
+            html {
+                font-size: 75.73333333px;
+            }
+        }
+
+        @media (max-width: 535px) {
+            html {
+                font-size: 71.06666667px;
+            }
+        }
+
+        @media (max-width: 437px) {
+            html {
+                font-size: 58px;
+            }
+        }
+
+        @media (max-width: 416px) {
+            html {
+                font-size: 55.2px;
+            }
+        }
+
+        @media (max-width: 413px) {
+            html {
+                font-size: 54.8px;
+            }
+        }
+
+        @media (max-width: 386px) {
+            html {
+                font-size: 51.2px;
+            }
+        }
+
+        @media (max-width: 377px) {
+            html {
+                font-size: 50px;
+            }
+        }
+
+        @media (max-width: 362px) {
+            html {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 322px) {
+            html {
+                font-size: 42.66666667px;
+            }
+        }
+
+        .five {
+            background-color: hotpink;
+        }
+
+        .five > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .five .browser {
+
+            height: 7rem;
+            width: 100%;
+            flex: 1;
+            position: relative;
+            background: #fff;
+        }
+
+        .five .browser .line {
+            position: absolute;
+            /*background-color: blue;*/
+        }
+
+        .five .browser .top {
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 2px;
+        }
+
+        .five .browser .bottom {
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            height: 2px;
+        }
+
+        .five .browser .left {
+            top: 0px;
+            left: 0px;
+            width: 2px;
+            height: 100%;
+        }
+
+        .five .browser .right {
+            top: 0px;
+            right: 0px;
+            width: 2px;
+            height: 100%;
+        }
+
+        /* 页面5的动画效果 */
+        .five {
+            overflow: hidden;
+        }
+
+        .five .left {
+            transform: translateY(-100%);
+            background-color: red;
+        }
+
+        .five .top {
+            transform: translateX(100%);
+            background-color: green;
+
+        }
+
+        .five .bottom {
+            transform: translateX(-100%);
+            background-color: orange;
+
+        }
+
+        .five .right {
+            transform: translateY(100%);
+            background-color: blue;
+        }
+
+        .five .browser .line {
+            /*transition:  all 1s;
+            transform: translate(0,0);*/
+            /*animation:stepAnimation  10s 5s linear  forwards ;*/
+            animation: stepAnimation 10s 5s linear both;
+        }
+
+        @keyframes stepAnimation {
+            from {
+                /* from中如果不设置 默认使用的是 初始状态 */
+            }
+            to {
+                transform: translate(0, 0);
+            }
+
+        }
+
+        .box {
+            width: 2rem;
+            height: 2rem;
+            /* background:red; */
+            margin: 1rem auto;
+            position: relative;
+            /* perspective:500px; */
+
+            transform-style: preserve-3d;
+
+            animation: anm 6s linear infinite;
+            /*background: blue;*/
+            /*z-index: 3;*/
+        }
+
+        .item {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            line-height: 2rem;
+            text-align: center;
+            font-size: 30px;
+            opacity: .5;
+
+        }
+
+        .item:nth-child(1) {
+            background: skyblue;
+            transform: translateZ(1rem);
+        }
+
+        .item:nth-child(2) {
+            background: green;
+            transform: rotateY(180deg) translateZ(1rem);
+        }
+
+        .item:nth-child(3) {
+            background: lightgray;
+            transform: rotateY(90deg) translateZ(1rem);
+        }
+
+        .item:nth-child(4) {
+            background: pink;
+            transform: rotateY(-90deg) translateZ(1rem);
+        }
+
+        .item:nth-child(5) {
+            background: yellow;
+            transform: rotateX(-90deg) translateZ(1rem);
+        }
+
+        .item:nth-child(6) {
+            background: yellowgreen;
+            transform: rotateX(90deg) translateZ(1rem);
+        }
+
+        @keyframes anm {
+            0% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+
+        }
+
+        .zz {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #D6E6FF;
+            display: none;
+        }
+
+        .bottomm {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70%;
+            /*background: green;*/
+            margin-top: 15%;
+            font-size: 0.2rem;
+            text-align: left;
+        }
+
+        .bottom1 {
+            width: 90%;
+            height: 100%;
+            padding-top: 0.4rem;
+            text-indent: 2em
+        }
+
+        /*p {text-indent: 2em;}  */
+        .xuwen {
+            width: 100%;
+            height: 0.3rem;
+            font-size: 0.2rem;
+            text-align: center;
+        }
+
+        .quxiao {
+            margin-top: 0.3rem;
+            float: left;
+            margin-left: 0.2rem;
+            line-height: 0.24rem;
+            height: 0.24rem;
+            border: 1px solid red;
+            margin-bottom: 0.2rem;
+            background-color: pink;
+            /*color:#fff;*/
+        }
+
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden
+        }
+
+        .queding {
+            float: right;
+            margin-top: 0.3rem;
+            margin-right: 0.2rem;
+            line-height: 0.24rem;
+            height: 0.24rem;
+            border: 1px solid red;
+            margin-bottom: 0.2rem;
+            background-color: green;
+            color: red;
+        }
+
+        #jieri {
+            display: none;
+            width: 60%;
+            height: 0.5rem;
+            margin-right: 20%;
+            font-size: 0.4rem;
+            line-height: 0.5rem;
+            text-align: center;
+
+        }
+
+        #jiemu {
+            display: none;
+            width: 60%;
+            height: 0.5rem;
+            margin-right: 20%;
+            font-size: 0.4rem;
+            line-height: 0.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="section five">
+    <div class="browser">
+        <!-- 设置四根线段 -->
+        <div class="box">
+            <div class="item">徐文龙</div>
+            <div class="item">笑一个</div>
+            <div class="item">冯晓倩</div>
+            <div class="item">快乐</div>
+            <div class="item">倩倩</div>
+            <div class="item">心情好</div>
+        </div>
+        <div>
+            <button id="button1">点一点</button>
+        </div>
+
+        <div class="line top"></div>
+        <div class="line bottom"></div>
+        <div class="line left"></div>
+        <div class="line right"></div>
+    </div>
+</div>
+
+
+<div id="jieri">心情好</div>
+<div id="jiemu">笑一笑</div>
+<div class="zz" id="zhz"></div>
+<div class="bottomm" id="bmb">
+    <div class="xuwen clearfix">
+        <div class="quxiao" id="qx">取消</div>
+        <div class="queding" id="qd">确定</div>
+    </div>
+    <div class="bottom1">
+        <p>
+            据报道,倩倩今天心情很好. 生活有条理,工作努力,认真. 人见人爱. 今天又是新的一天,棒棒的.
+        </p>
+        <br>
+        <p>
+            倩倩不开心,希望你笑脸常开,希望你笑一笑,买点好吃的.  笑脸常开,不沮丧.  永远相信,倩倩是最棒的.
+        </p>
+    </div>
+</div>
+</body>
+</html>
+<script>
+  var bbb = document.getElementById('button1');
+  var ccc = document.getElementById('qx');
+  var ccc = document.getElementById('qd');
+  var zhzz = document.getElementById('zhz');
+  var jierii = document.getElementById('jieri');
+  var jiermu = document.getElementById('jiemu');
+  var bmbm = document.getElementById('bmb');
+
+  // var  zzz =document.getElementsByClassName('zz');
+  var xuwenlong = document.getElementsByClassName('xuwen');
+  // var  bottom1 =document.getElementsByClassName('bottom');
+
+  button1.onclick = function () {
+    zhzz.style.display = "block";
+    bmbm.style.display = 'block';
+  }
+  qd.onclick = function () {
+    zhzz.style.display = "none";
+    bmbm.style.display = 'none';
+    jierii.style.display = 'block';
+    jiemu.style.display = 'none';
+
+  }
+  qx.onclick = function () {
+    zhzz.style.display = "none";
+    bmbm.style.display = 'none';
+    jierii.style.display = 'none';
+    jiemu.style.display = 'block';
+  }
+
+</script>
